@@ -4,8 +4,13 @@
       HOME
     </a>
     <ul id="user-links">
-      <%= link_to "注册", signup_path %>
-      <%= link_to "登陆", login_path %>
+      <% if current_user %>
+          <%= link_to current_user.name %>
+          <%= link_to "退出", logout_path, method: "delete" %>
+      <% else %>
+          <%= link_to "注册", signup_path %>
+          <%= link_to "登陆", login_path %>
+      <% end %>
     </ul>
   </div>
 </div>
