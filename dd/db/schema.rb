@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 20140910095035) do
     t.string   "email"
     t.string   "password_digest"
     t.string   "token"
+    t.string   "forget_issues"
+    t.string   "forget_answer"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
