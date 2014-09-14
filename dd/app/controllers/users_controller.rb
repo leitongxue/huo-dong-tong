@@ -15,7 +15,6 @@ class UsersController < ApplicationController
     if @user.save
       cookies.permanent[:token] = @user.token
       redirect_to :root, :notice => "注册成功"
-
     else
       render :signup
     end

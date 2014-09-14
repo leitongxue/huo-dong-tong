@@ -21,21 +21,24 @@
             <dt><%= f.label :password %></dt>
             <dd><%= f.password_field :password %></dd>
             <% if @user.errors[:password].any? %>
-                <dd class="error"><%= @user.errors[:password][0] %></dd>
+                <dd class="error"><%= @user.errors[:password] %></dd>
             <% end %>
           </dl>
           <dl class="form">
-            <dt><%= f.label :password_comfirmation %></dt>
-            <dd><%= f.password_field :password_comfirmation %></dd>
+            <dt><%= f.label :password_confirmation %></dt>
+            <dd><%= f.password_field :password_confirmation %></dd>
+            <% if @user.errors[:password_confirmation].any? %>
+                <dd class="error"><%= @user.errors[:password_confirmation] %></dd>
+            <% end %>
           </dl>
 
 
           <dl class="form">
             <dt><%= f.label :forget_issues %></dt>
             <dd><%= f.text_field :forget_issues %></dd>
-            <!--<% if @user.errors[:forget_issues].any? %>-->
-                <!--<dd class="error"><%= @user.errors[:forget_issues][0] %></dd>-->
-            <!--<% end %>-->
+            <% if @user.errors[:forget_issues].any? %>
+                <dd class="error"><%= @user.errors[:forget_issues][0] %></dd>
+            <% end %>
           </dl>
           <dl class="form">
             <dt><%= f.label :forget_answer %></dt>
@@ -44,8 +47,6 @@
                 <dd class="error"><%= @user.errors[:forget_answer][0] %></dd>
             <% end %>
           </dl>
-
-
           <p><%= f.submit "注 册", :class => "button primary" %></p>
         </div>
       </div>

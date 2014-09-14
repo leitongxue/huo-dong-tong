@@ -16,6 +16,7 @@ zh-CN:
               taken: "已存在"
             password:
               blank: "不能为空"
+              too_short: "密码长度太短"
             password_digest:
               blank: "不能为空"
             forget_issues:

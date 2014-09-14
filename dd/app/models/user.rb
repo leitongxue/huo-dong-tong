@@ -1,11 +1,12 @@
 class User < ActiveRecord::Base
-  has_secure_password
-  attr_accessible  :name, :password, :forget_issues, :forget_answer,:password_confirmation, :token
+  attr_accessible :name, :password, :password_confirmation,:forget_issues,:forget_answer,:identity,:token
   before_create { generate_token(:token) }
   validates :name, :presence => true, :uniqueness => {:case_sensitive => false}
   validates :forget_issues, :presence => true
   validates :forget_answer, :presence => true
-  validates :password, :length => {:minimum => 6}, :on => :create
+  validates :password, :presence => true
+  validates :password_confirmation, :presence => true
+  has_secure_password
 
   def generate_token(column)
     begin
